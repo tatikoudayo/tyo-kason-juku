@@ -1,0 +1,5 @@
+{
+    "require": {
+        "tkc49/kintone-sdk-for-wordpress": "^1.4"
+    }
+}

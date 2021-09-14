@@ -31,8 +31,6 @@ function tyo_kason_juku_customize_init() {
 	require_once TYO_KASON_JUKU_CUSTOMIZE_PATH . '/class-tyo-kason-juku-customize.php';
 	require_once TYO_KASON_JUKU_CUSTOMIZE_PATH . '/inclueds/define.php';
 
-	error_log( 'hello' );
-	
 	// new Naist_Yamato_Customize();
 }
 

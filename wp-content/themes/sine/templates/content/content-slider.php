@@ -16,7 +16,7 @@ if( !empty( $pst ) ):?>
 				if( has_post_thumbnail( $p ) ){
 					$img = get_the_post_thumbnail_url( $p, 'full' );
 				}else{
-					$img = get_template_directory_uri() . '/assets/img/default-banner.jpg';
+					$img = get_template_directory_uri() . '/assets/img/kokuban.jpg';
 				}?>
 				<div class="sine-banner-slider-inner" style="background-image: url( <?php echo esc_url( $img ) ?>)">
 					<div class="banner-slider-content">

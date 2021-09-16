@@ -37,11 +37,11 @@ $data = array(
 								<div>
 									<?php if ( is_front_page() ) :
 										?>
-										<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+										<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">松下村塾</a></h1>
 										<?php
 									else :
 										?>
-										<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+										<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">松下村塾</a></p>
 										<?php
 									endif;
 									$description = get_bloginfo( 'description', 'display' );
@@ -104,7 +104,7 @@ $data = array(
 						Sine_Theme::menu_toggler(); ?>
 					</div>
 					<div class="<?php echo Sine_Helper::with_prefix( 'header-search' ); ?>">
-
+						<h2>"お知らせ"</h2>
 
 						<button class="circular-focus screen-reader-text" data-goto=".sine-header-search .sine-toggle-search"><?php esc_html_e( 'Circular focus', 'sine' ); ?></button>
 

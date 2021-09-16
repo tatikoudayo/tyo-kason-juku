@@ -1274,12 +1274,12 @@ span.infinite-loader{
 
 .sine-social-menu a[href*="mailto:"]:before {
     content: "\f0e0";
-    color: #ff0000;
+    color: #ee8c0d;
 }
 
 .sine-social-menu a[href*="mailto:"]:hover:before, 
 .sine-social-menu-style-2 .sine-social-menu a[href*="mailto:"]:before {
-    background: #ff0000;
+    background: #fa9107;
     color: #fff;
 }
 
@@ -1307,8 +1307,8 @@ div#mr-mobile-menu li.menu-item:before {
 }
 
 div#mr-mobile-menu li.fa.menu-item {
-	display: block;
-}
+	display: black;
+} 
 
 .post-content a {
 	text-decoration: underline;

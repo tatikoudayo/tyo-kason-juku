@@ -259,10 +259,10 @@ if( !class_exists( 'Sine_Helper' ) ):
 			add_theme_support( 'custom-header', apply_filters( self::fn_prefix( 'custom_header_args' ) , array(
 				'default-text-color' => '000000',
 				'width'              => 1366,
-				'height'             => 400,
+				'height'             => 200,
 				'flex-height'        => true,
 				'wp-head-callback'   => array( __CLASS__, 'header_style' ),
-				'default-image'      => get_template_directory_uri() . '/assets/img/default-banner.jpg',
+				'default-image'      => get_template_directory_uri() . '/assets/img/kokuban.jpg',
 			)));
 		}
 

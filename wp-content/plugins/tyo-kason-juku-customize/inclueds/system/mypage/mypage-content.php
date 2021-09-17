@@ -245,7 +245,7 @@ class Tyo_Kason_Juku_Content_Mypage {
 			</thead>
 <?php
 		foreach( $user_info as $info_name => $info_value ) {
-			if ( $info_name != 'management_number' and $info_name != '更新者' and $info_name != '作成者' and $info_name != '更新日時' and $info_name != '$id' and $info_name != 'login_type' and $info_name != 'レコード番号' and $info_name != '$revision' and $info_name != '作成日時' ) {
+			if ( $info_name != 'management_number' and $info_name != '更新者' and $info_name != '作成者' and $info_name != '更新日時' and $info_name != '$id' and $info_name != 'login_type' and $info_name != 'レコード番号' and $info_name != '$revision' and $info_name != '作成日時' and $info_value['value'] != '' ) {
 ?>
 				<tbody>
 					<tr>

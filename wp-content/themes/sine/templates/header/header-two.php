@@ -104,7 +104,7 @@ $data = array(
 						Sine_Theme::menu_toggler(); ?>
 					</div>
 					<div class="<?php echo Sine_Helper::with_prefix( 'header-search' ); ?>">
-						<h2>"お知らせ"</h2>
+						
 
 						<button class="circular-focus screen-reader-text" data-goto=".sine-header-search .sine-toggle-search"><?php esc_html_e( 'Circular focus', 'sine' ); ?></button>
 

@@ -51,7 +51,7 @@ $data = array(
 									<?php endif; ?>
 								</div>
 							</div>
-						</div>				
+						</div>
 
 						<div class="sine-contact-info">
 							<ul>

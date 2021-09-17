@@ -4,10 +4,26 @@ define(
 	array(
 		'DOMAIN' => 'mgo2vwf85q33.cybozu.com',
 		'APP'    => array(
-			'KOKYAKU_MANAGEMENT'          => array(
-				'ID'    => '4',
-				'TOKEN' => '3lBZFxI8wp0UHzkKcwKaQcUroGVovWTdM5qhvCdk',
-			)
+			'FAMILY_MANAGEMENT' => array(
+				'ID'    => '6',
+				'TOKEN' => 'nUK8FwtLb6zFii3hhkc9MwHLp7Np5oGEaWQOXIf5',
+			),
+			'TEACHER_MANAGEMENT' => array(
+				'ID'    => '9',
+				'TOKEN' => 'Pb8HmEf3DWecC6g0F5oNDl7mIzq4k9SzSgW0xHnk',
+			),
+			'ENTERPRISE_MANAGEMENT' => array(
+				'ID'    => '8',
+				'TOKEN' => 'aCx5Mtkk2SFG2Qia44ceJApqNHaaO0xEidR8r660',
+			),
+			'EVENT_MANAGEMENT' => array(
+				'ID'    => '10',
+				'TOKEN' => 'koDkikF4zlK9hfuJI0gjAZVsf7K3igQKbzctRQsF',
+			),
+			'EVENT_RELATION_MANAGEMENT' => array(
+				'ID'    => '11',
+				'TOKEN' => 'oLA5yhpQcUv5lyfbJ43VJP7RlVEYUo3Eubbygt1a',
+			),
 		)
 	)
 );

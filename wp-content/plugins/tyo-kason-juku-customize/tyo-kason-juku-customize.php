@@ -30,6 +30,7 @@ function tyo_kason_juku_customize_init() {
 	
 	require_once TYO_KASON_JUKU_CUSTOMIZE_PATH . '/class-tyo-kason-juku-customize.php';
 	require_once TYO_KASON_JUKU_CUSTOMIZE_PATH . '/inclueds/define.php';
+	require_once( dirname( __FILE__ ) . '/vendor/autoload.php' );
 
 	new Tyo_Kason_Juku_Customize();
 }

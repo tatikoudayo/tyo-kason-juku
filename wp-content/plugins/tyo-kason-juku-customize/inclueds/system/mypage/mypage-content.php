@@ -7,6 +7,9 @@ class Tyo_Kason_Juku_Content_Mypage {
 
 	public static function family() {
 
+		$user_id   = wp_get_current_user() -> ID;
+		$user_info = get_user_meta( $user_id, 'kintone_row_data_basic_info', true );
+
 		$kintone = array(
 			'domain' => TYO_KASON_JUKU_KINTONE_INFOR['DOMAIN'],
 			'app'    => TYO_KASON_JUKU_KINTONE_INFOR['APP']['EVENT_MANAGEMENT']['ID'],
@@ -16,6 +19,12 @@ class Tyo_Kason_Juku_Content_Mypage {
 		$query = 'order by $id desc';
 
 		$records = Tkc49\Kintone_SDK_For_WordPress\Kintone_API::getRecords( $kintone, $query, - 1 );
+
+		$kintone = array(
+			'domain' => TYO_KASON_JUKU_KINTONE_INFOR['DOMAIN'],
+			'app'    => TYO_KASON_JUKU_KINTONE_INFOR['APP']['EVENT_RELATION_MANAGEMENT']['ID'],
+			'token'  => TYO_KASON_JUKU_KINTONE_INFOR['APP']['EVENT_RELATION_MANAGEMENT']['TOKEN'],
+		);
 ?>
 		<h2>募集中のイベント</h2>
 		<table>
@@ -24,19 +33,30 @@ class Tyo_Kason_Juku_Content_Mypage {
 				<th>イベント名</th>
 				<th>開催場所</th>
 				<th>開催日</th>
-				<th>参加ボタン</th>
+				<th>参加状況</th>
 				</tr>
 			</thead>
 <?php
 		foreach( $records as $record ) {
-			$url = '/family/offer_event/?event_id=' . $record['management_number']['value'];
+			$query                  = '家庭管理番号 = "' . $user_info['management_number']['value'] . '" and イベント管理番号 = "' . $record['management_number']['value'] . '"';
+			$event_relation_records = Tkc49\Kintone_SDK_For_WordPress\Kintone_API::getRecords( $kintone, $query, - 1 );
+
+			if ( empty( $event_relation_records ) ) {
+				$url            = '/family/offer_event/?event_management_number=' . $record['management_number']['value'];
+				$class          = 'send_btn_event_cancel';
+				$button_message = '不参加';
+			} else {
+				$url            = '/family/delete_event/?event_management_number=' . $record['management_number']['value'];
+				$class          = 'send_btn_event_offer';
+				$button_message = '参加';
+			}
 ?>
 			<tbody>
 				<tr>
 				<td><?php echo $record['イベント名']['value']; ?></td>
 				<td><?php echo $record['開催場所']['value']; ?></td>
 				<td><?php echo $record['開催日']['value']; ?></td>
-				<td><a class="send_btn_event" href="<?php echo esc_url( home_url( $url ) ); ?>" target="_blank">参加</a></td>
+				<td><a class=<?php echo $class; ?> href="<?php echo esc_url( home_url( $url ) ); ?>" target="_blank"><?php echo $button_message; ?></a></td>
 				</tr>
 			</tbody>
 <?php
@@ -52,6 +72,55 @@ class Tyo_Kason_Juku_Content_Mypage {
 		Tyo_Kason_Juku_Content_Mypage::basic_info();
 	}
 	public static function enterprise() {
+
+		$user_id   = wp_get_current_user() -> ID;
+		$user_info = get_user_meta( $user_id, 'kintone_row_data_basic_info', true );
+
+		$kintone = array(
+			'domain' => TYO_KASON_JUKU_KINTONE_INFOR['DOMAIN'],
+			'app'    => TYO_KASON_JUKU_KINTONE_INFOR['APP']['EVENT_MANAGEMENT']['ID'],
+			'token'  => TYO_KASON_JUKU_KINTONE_INFOR['APP']['EVENT_MANAGEMENT']['TOKEN'],
+		);
+
+		$query = '企業管理番号 = "' . $user_info['management_number']['value']  . '"';
+
+		$records = Tkc49\Kintone_SDK_For_WordPress\Kintone_API::getRecords( $kintone, $query, - 1 );
+
+
+		$kintone = array(
+			'domain' => TYO_KASON_JUKU_KINTONE_INFOR['DOMAIN'],
+			'app'    => TYO_KASON_JUKU_KINTONE_INFOR['APP']['EVENT_RELATION_MANAGEMENT']['ID'],
+			'token'  => TYO_KASON_JUKU_KINTONE_INFOR['APP']['EVENT_RELATION_MANAGEMENT']['TOKEN'],
+		);
+?>
+		<h1>掲載しているイベント</h1>
+		<table>
+			<thead>
+				<tr>
+				<th>イベント名</th>
+				<th>開催場所</th>
+				<th>開催日</th>
+				<th>現在の参加者数</th>
+				</tr>
+			</thead>
+<?php
+		foreach( $records as $record ) {
+			$query        = 'イベント管理番号 = "' . $record['management_number']['value'] . '"';
+			$participants = Tkc49\Kintone_SDK_For_WordPress\Kintone_API::getRecords( $kintone, $query, - 1 );
+?>
+		<tbody>
+			<tr>
+			<td><?php echo $record['イベント名']['value']; ?></td>
+			<td><?php echo $record['開催場所']['value']; ?></td>
+			<td><?php echo $record['開催日']['value']; ?></td>
+			<td><?php echo count( $participants ); ?></td>
+			</tr>
+		</tbody>
+<?php
+		}
+?>
+		</table>
+<?php
 		Tyo_Kason_Juku_Content_Mypage::basic_info();
 	}
 
@@ -65,7 +134,7 @@ class Tyo_Kason_Juku_Content_Mypage {
 		<table>
 			<thead>
 				<tr>
-				<th>メタ情報</th>
+				<th>情報名</th>
 				<th>値</th>
 				</tr>
 			</thead>

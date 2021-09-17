@@ -20,6 +20,10 @@ define(
 				'ID'    => '10',
 				'TOKEN' => 'koDkikF4zlK9hfuJI0gjAZVsf7K3igQKbzctRQsF',
 			),
+			'EVENT_RELATION_MANAGEMENT' => array(
+				'ID'    => '11',
+				'TOKEN' => 'oLA5yhpQcUv5lyfbJ43VJP7RlVEYUo3Eubbygt1a',
+			),
 		)
 	)
 );

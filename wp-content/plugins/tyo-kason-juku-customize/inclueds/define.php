@@ -24,6 +24,14 @@ define(
 				'ID'    => '11',
 				'TOKEN' => 'oLA5yhpQcUv5lyfbJ43VJP7RlVEYUo3Eubbygt1a',
 			),
+			'LESSON_MANAGEMENT' => array(
+				'ID'    => '12',
+				'TOKEN' => 'cU9ZhQaa09qFVcSY2J9QclPISO81EUYDDoEcd1iV',
+			),
+			'LESSON_RELATION_MANAGEMENT' => array(
+				'ID'    => '13',
+				'TOKEN' => 'uNlacYU54dXyDMbCD01cPsXAM4fyyNkee01JNwxe',
+			),
 		)
 	)
 );

@@ -12,5 +12,8 @@ class Tyo_Kason_Juku_Customize {
 
 		require_once TYO_KASON_JUKU_CUSTOMIZE_PATH . '/inclueds/system/event/class-event.php';
 		new Tyo_Kason_Juku_Event();
+
+		require_once TYO_KASON_JUKU_CUSTOMIZE_PATH . '/inclueds/system/lesson/class-lesson.php';
+		new Tyo_Kason_Juku_Lesson();
 	}
 }

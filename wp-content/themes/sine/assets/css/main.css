@@ -138,7 +138,15 @@ body:not(.page-template-full-width) #content { padding-top: 5rem; padding-bottom
 
 .site-branding .site-title { font-size: 2rem; margin: 0; }
 
-.site-branding .site-title a { color: #000; font-weight: 600; }
+.site-branding .site-title a { color: #ffffff; font-weight: 600; font-size: xx-large; }
+
+#location { color: #ffffff; }
+#phone { color: #ffffff; }
+#email { color: #ffffff; }
+.fa-map-marker { color: #ffffff; }
+.fa-phone { color: #ffffff; }
+.fa-envelope { color: #ffffff; }
+
 
 .site-branding .site-description { font-size: 0.95rem; margin: 0; color: #000; }
 
@@ -983,7 +991,7 @@ a.cart-icon span { position: absolute; font-size: 8px; height: 15px; width: 15px
 
 @media (max-width: 576px) { .sine-header-top .sine-contact-info { display: none; } }
 
-.sine-header-top-wrapper { background: #f4f4f4; }
+.sine-header-top-wrapper { background: #db8b13fa; color: #ffffff;}
 
 @media (max-width: 576px) { .sine-header-top-wrapper .site-branding { flex: 0 0 100%; justify-content: center; text-align: center; } }
 

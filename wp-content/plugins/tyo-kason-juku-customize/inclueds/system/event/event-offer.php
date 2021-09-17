@@ -19,10 +19,12 @@ class Tyo_Kason_Juku_Offer_Event {
 				return false;
 			}
 
+			$form_data   = $submission -> get_posted_data();
+
 			$user_id   = wp_get_current_user() -> ID;
 			$user_info = get_user_meta( $user_id, 'kintone_row_data_basic_info', true );
 
-			$event_id = $_GET['event_id'];
+			$event_id = $form_data['event_id'];
 			error_log( $event_id );
 		}
 	}

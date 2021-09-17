@@ -1160,12 +1160,12 @@ span.infinite-loader{
 .sine-social-menu a[href*="instagram.com"]:before,
 *[id^='menu-social-'] a[href*="instagram.com"]:before {
     content: "\f16d";
-    color: #c32aa3;
+    color: #fcf8fb;
 }
 
 .sine-social-menu a[href*="instagram.com"]:hover:before,
 .sine-social-menu-style-2 .sine-social-menu a[href*="instagram.com"]:before {
-    background: #c32aa3;
+    background: #f7f1f5;
     color: #fff;
 }
 
